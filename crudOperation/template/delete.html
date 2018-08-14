@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'confirmdelete' id=deleteEmp.id %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <h3 style="color:red;">Are you sure you want to delete this?</h3>
+            </td>
+        </tr>
+        <tr>
+           <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Name</label><br>
+               <input type="text" name="name" value="{{deleteEmp.name}}" style="border:1px solid #32CD32;padding:10px;" readonly>
+           </td>
+        </tr>
+        <tr>
+            <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Email</label><br>
+                   <input type="email" name="email" value="{{deleteEmp.email}}" style="border:1px solid #32CD32;padding:10px;" readonly>
+           </td>
+        </tr>
+        <tr>
+            <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Address</label><br>
+                   <input type="text" name="address" value="{{deleteEmp.address}}" style="border:1px solid #32CD32;padding:10px;" readonly>
+           </td>
+        </tr>
+        <tr>
+            <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Phone</label><br>
+                   <input type="text" name="phone" value="{{deleteEmp.phone}}" style="border:1px solid #32CD32;padding:10px;" readonly>
+           </td>
+        </tr>
+        <tr>
+            <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Designation</label><br>
+                   <input type="text" name="designation" value="{{deleteEmp.designation}}" style="border:1px solid #32CD32;padding:10px;" readonly>
+           </td>
+        </tr>
+    </table>
+    <input type="submit" value="Delete" style="border-radius:0px 9px 0px 9px;padding:10px;border:1px solid #32CD32;background-color:white;
+                    text-align:center;margin-left:100px;">
+</form>
+</body>
+</html>

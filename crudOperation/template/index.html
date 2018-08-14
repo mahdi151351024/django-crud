@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    #users {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#users td{
+ text-align:center;
+}
+#users td, #users th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#users tr:nth-child(even){background-color: #f2f2f2;}
+
+#users tr:hover {background-color: #ddd;}
+
+#users th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<body>
+<form action="">
+  <label style="font-family:sans-serif;font-weight: bolder;">Search By Name</label><br>
+               <input type="text" name="search" placeholder="Search.." style="border:1px solid #32CD32;padding:10px;">
+    <input type="submit" value="Search"  style="border-radius:0px 9px 0px 9px;padding:10px;border:1px solid #32CD32;background-color:white;
+                    text-align:center;margin-left:100px;">
+    </form>
+<br>
+    <table id="users">
+        <tr>
+            <th>Name</th>
+             <th>Email</th>
+             <th>Address</th>
+             <th>Phone</th>
+             <th>Designation</th>
+            <th>Action</th>
+        </tr>
+        {% for emp in all_employee %}
+           <tr>
+               <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.address}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.designation}}</td>
+               <td><a href="{% url 'update' id=emp.id %}">Update</a>||<a href="{% url 'delete' id=emp.id %}">Delete</a> </td>
+           </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'create' %}">Create New</a>
+</body>
+</html>

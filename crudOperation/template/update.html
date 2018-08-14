@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+           <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Name</label><br>
+               <input type="text" name="name" value="{{updateEmp.name}}" style="border:1px solid #32CD32;padding:10px;" required>
+           </td>
+        </tr>
+        <tr>
+            <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Email</label><br>
+                   <input type="email" name="email" value="{{updateEmp.email}}" style="border:1px solid #32CD32;padding:10px;" required>
+           </td>
+        </tr>
+        <tr>
+            <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Address</label><br>
+                   <input type="text" name="address" value="{{updateEmp.address}}" style="border:1px solid #32CD32;padding:10px;" required>
+           </td>
+        </tr>
+        <tr>
+            <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Phone</label><br>
+                   <input type="text" name="phone" value="{{updateEmp.phone}}" style="border:1px solid #32CD32;padding:10px;" required>
+           </td>
+        </tr>
+        <tr>
+            <td>
+               <label style="font-family:sans-serif;font-weight: bolder;">Designation</label><br>
+                   <input type="text" name="designation" value="{{updateEmp.designation}}" style="border:1px solid #32CD32;padding:10px;" required>
+           </td>
+        </tr>
+    </table>
+    <input type="submit" value="Update" style="border-radius:0px 9px 0px 9px;padding:10px;border:1px solid #32CD32;background-color:white;
+                    text-align:center;margin-left:100px;">
+</form>
+</body>
+</html>
